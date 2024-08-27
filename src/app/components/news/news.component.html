@@ -1,5 +1,14 @@
-<ul *ngIf="newList">
-  <li *ngFor="let news of newList.articles; let i = index">
-    {{ news.author }}
-  </li>
+<div class="flex">
+<ul *ngIf="articles">
+<li class="flex h-44" *ngFor="let article of articles; let i = index">
+  {{ article?.title }}
+  <img [src]="article?.urlToImage"/>
+</li>
 </ul>
+<ul class="grid grid-cols-4 gap-2">
+  <li  *ngFor="let publisher of authors; let i = index">
+  {{ publisher?.source?.name }}
+</li>
+</ul>
+</div>
+
