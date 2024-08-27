@@ -1,1 +1,5 @@
-<p>news works!</p>
+<ul *ngIf="newList">
+  <li *ngFor="let news of newList.articles; let i = index">
+    {{ news.author }}
+  </li>
+</ul>
