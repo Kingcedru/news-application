@@ -1,8 +1,8 @@
 <div class="py-10 px-10">
   <h1 class="flex justify-center font-bold text-8xl mb-36">Daily News</h1>
   <div class="flex  gap-4 justify-center my-24">
-    <input class="border-2 border-zinc-300 rounded-2xl w-96 px-5" type="text" placeholder="Search for news" />
-    <button class="bg-blue-500  py-2 text-white rounded-2xl w-20 flex justify-center">
+    <input [(ngModel)]="searchTerm" class="border-2 border-zinc-300 rounded-2xl w-96 px-5"  type="text" placeholder="Search for news" />
+    <button class="bg-blue-500  py-2 text-white rounded-2xl w-20 flex justify-center" (click)="getSearchedNews()">
       <span class="[&>svg]:h-8 [&>svg]:w-7">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -34,10 +34,11 @@
       class="flex flex-col gap-5 border-2 border-gray-500 px-5 w-full h-fit py-4"
     >
       <h1 class="font-semi-bold text-2xl flex justify-center">Publishers</h1>
-      <div class="grid grid-cols-2 gap-5 w-fit">
+      <div class="grid grid-cols-2 gap-5 w-fit justify-center">
         <p
           class="cursor-pointer w-fit hover:text-blue-500"
           *ngFor="let publisher of authors; let i = index"
+          (click)="getPublisherArticles(publisher.source.name)"
         >
           {{ publisher?.source?.name }}
         </p>

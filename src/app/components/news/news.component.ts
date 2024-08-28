@@ -10,6 +10,7 @@ import { NewsService } from 'src/app/services/news.service';
 export class NewsComponent implements OnInit {
   articles?: Articles[];
   authors?: Articles[];
+  searchTerm: string = '';
   constructor(
     private readonly newsService: NewsService,
     private router: Router
@@ -29,5 +30,21 @@ export class NewsComponent implements OnInit {
 
   getArticle(id: string): void {
     this.router.navigate(['/article', id]);
+  }
+
+  getPublisherArticles(id: string) {
+    this.router.navigate(['/publisher', id]);
+  }
+
+  getSearchedNews() {
+    const searchedArticle = this.articles?.filter((article) =>
+      article.title.includes(this.searchTerm)
+    );
+    console.log(searchedArticle);
+    if (searchedArticle && searchedArticle.length === 0) {
+      this.router.navigate(['/']);
+      return;
+    }
+    this.articles = searchedArticle;
   }
 }
