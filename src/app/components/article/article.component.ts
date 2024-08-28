@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { Articles } from 'src/app/Dto/news';
 import { NewsService } from 'src/app/services/news.service';
-import { decord } from 'src/app/utils/decord';
-
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
