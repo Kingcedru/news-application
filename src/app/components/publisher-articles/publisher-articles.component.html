@@ -1,1 +1,7 @@
-<p>publisher-articles works!</p>
+<div class="flex flex-col gap-10 items-center my-20">
+  <h1 class="font-bold text-4xl">{{publisher}} Articles</h1>
+  <div *ngFor="let article of articles" class="w-3/6 h-4/6">
+    <img class="h-fit" [src]="article?.urlToImage" />
+    <h1 class="font-medium text-2xl">{{ article?.title }}</h1>
+  </div>
+</div>
