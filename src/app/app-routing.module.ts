@@ -15,8 +15,10 @@ const routes: Routes = [
   },
   {
     path: 'publisher/:id',
-    component: PublisherArticlesComponent
-  }
+    component: PublisherArticlesComponent,
+    children: [{ path: 'article/:id', component: ArticleComponent }],
+  },
+  // { path: '', redirectTo: '/publisher', pathMatch: 'full' },
 ];
 
 @NgModule({

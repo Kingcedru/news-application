@@ -32,11 +32,11 @@ export class ArticleComponent implements OnInit {
               ),
               catchError((error) => {
                 console.error(error);
-                return of(undefined); // Return empty result on error
+                return of(undefined);
               })
             );
           } else {
-            return of(undefined); // Return empty result if no title
+            return of(undefined); 
           }
         })
       )

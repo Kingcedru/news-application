@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { Articles } from 'src/app/Dto/news';
 import { NewsService } from 'src/app/services/news.service';
@@ -14,7 +14,8 @@ export class PublisherArticlesComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private readonly newsService: NewsService
+    private readonly newsService: NewsService,
+    private router: Router
   ) {}
   ngOnInit() {
     this.route.paramMap
@@ -41,5 +42,9 @@ export class PublisherArticlesComponent implements OnInit {
       .subscribe((article) => {
         this.articles = article || undefined;
       });
+  }
+  getArticleTitle(id: string) {
+    const publishedId = this.route.snapshot.paramMap.get('id');
+    this.router.navigate(['/article', id]);
   }
 }
