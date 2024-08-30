@@ -1,5 +1,4 @@
-const PROXY_HOST =
-  "https://news-proxy.netlify.app/?apiKey=ce0791cf7cb34350929466338dfff3a9";
+const PROXY_HOST = "https://news-proxy.netlify.app/";
 const PROXY_CONFIG = [
   {
     context: ["/api"],
