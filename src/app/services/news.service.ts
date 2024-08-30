@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root',
 })
 export class NewsService {
-  apiUrl = environment.apiUrl
+  apiUrl = '../../../api/news-proxy.js'
   constructor(private http: HttpClient) {}
 
   getNews(): Observable<any> {

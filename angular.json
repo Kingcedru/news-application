@@ -88,10 +88,6 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "News-Application:build",
-            "proxyConfig": "proxy.conf.js"
-          },
           "configurations": {
             "production": {
               "browserTarget": "News-Application:build:production"
