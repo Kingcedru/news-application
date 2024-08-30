@@ -1,8 +1,8 @@
 // api/news-proxy.js
-
+import fetch from "node-fetch";
 export default async function handler(req, res) {
   // URL of the target API that your Angular app is trying to access
-  const apiUrl = `https://news-proxy.netlify.app/?apiKey=ce0791cf7cb34350929466338dfff3a9`;
+  const apiUrl = `https://news-proxy.netlify.app/api?apiKey=ce0791cf7cb34350929466338dfff3a9`;
 
   try {
     // Fetching the data from the target API
